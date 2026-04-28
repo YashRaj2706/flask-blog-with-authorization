@@ -56,6 +56,15 @@ createpost/
    http://127.0.0.1:5000
    ```
 
+
+## Screenshots of project
+
+<img width="708" height="761" alt="WhatsApp Image 2026-04-27 at 10 30 11 PM" src="https://github.com/user-attachments/assets/d00ac375-263c-4749-899c-73df394262e5" />
+
+<img width="1600" height="602" alt="WhatsApp Image 2026-04-27 at 10 31 35 PM" src="https://github.com/user-attachments/assets/3fd5cbb0-87d5-460e-9165-458a2803b697" />
+
+
+
 ## 🔐 Future Improvements
 
 * Password hashing
