@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4e73df, #1cc88a);
+        }
+
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            color: #4e73df;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 18px;
+            margin: 10px 5px 20px 0;
+            background: #4e73df;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #2e59d9;
+        }
+
+        .btn-green {
+            background: #1cc88a;
+        }
+
+        .btn-green:hover {
+            background: #17a673;
+        }
+
+        .post {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            background: #f8f9fc;
+        }
+
+        .post-title {
+            font-weight: bold;
+            color: #4e73df;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .logout {
+            float: right;
+            color: red;
+            text-decoration: none;
+        }
+
+        .logout:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <a href="/logout" class="logout">Logout</a>
+
+    <h2>Welcome, {{ user_name }}</h2>
+
+    
+    <a href="/create_post" class="btn">Create Post</a>
+    <a href="/dashboard" class="btn btn-green">View Posts</a>
+
+    <hr>
+
+    <h3>Your Posts</h3>
+
+    {% for post in posts %}
+        <div class="post">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <div class="post-title">{{ post.title }}</div>
+            <div>{{ post.content }}</div>
+            <form action="{{ url_for('delete_post', post_id=post.id) }}">
+            <button type="submit">Delete</button>
+            </form>
+            </div> 
+        </div>
+    {% else %}
+        <p>No posts yet.</p>
+    {% endfor %}
+
+</div>
+
+</body>
+</html>
+

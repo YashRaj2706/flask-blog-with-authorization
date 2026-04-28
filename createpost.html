@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Post</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f8f9fc;
+            text-align: center;
+        }
+
+        .box {
+            width: 400px;
+            margin: 80px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+
+        input, textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #4e73df;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2e59d9;
+        }
+
+        a {
+            display: block;
+            margin-top: 15px;
+            color: #4e73df;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h2>Create New Post</h2>
+
+    <form method="POST">
+        <label>Title</label><br>
+        <input type="text" name="title" required><br>
+
+        <label>Content</label><br>
+        <textarea name="content" rows="4" required></textarea><br>
+
+        <button type="submit">Create</button>
+    </form>
+
+    <a href="/dashboard">Back to Dashboard</a>
+
+</div>
+
+</body>
+</html>
